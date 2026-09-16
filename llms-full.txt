@@ -1,0 +1,1159 @@
+# AdValorem AgentNet — full capability catalog
+
+Regenerated 2026-09-16T18:00:00+00:00.
+
+## Send transactional email
+capability_id: action.email_send
+provider: Resend
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.0020 USDC
+url: https://agentic.advalorem.io/capabilities/action.email_send/
+description: Resend transactional email (planned)
+
+## Place phone call
+capability_id: action.phone_call
+provider: Stablephone
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.0950 USDC
+url: https://agentic.advalorem.io/capabilities/action.phone_call/
+description: StablePhone outbound call (planned)
+
+## Agentnet · Aggregate
+capability_id: agentnet.aggregate
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.aggregate/
+description: agentnet.aggregate — labor_market capability provided by agentnet.native. Catalog status: PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: labor-market runtime not built.
+
+## Agentnet · Builder Route Advisor
+capability_id: agentnet.builder_route_advisor
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.builder_route_advisor/
+description: agentnet.builder_route_advisor — orchestration capability provided by agentnet.native. Catalog status: PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: compose ready; upstream capability not routed.
+
+## Agentnet · Compose
+capability_id: agentnet.compose
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8747/task_registry
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.compose/
+description: Task Registry: create, list, accept, submit, result, verify, fanout, compose. Shared primitive over JSON persistence + state machine. (cert7 batch 2026-08-30)
+
+## Agentnet · Discover
+capability_id: agentnet.discover
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8745/v1/{capability_id}
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.discover/
+description: agentnet.discover — orchestration capability provided by agentnet.native. Catalog status: PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: orchestration engine not built.
+
+## Agentnet · Enriched Liquidation Targets
+capability_id: agentnet.enriched_liquidation_targets
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.enriched_liquidation_targets/
+description: agentnet.enriched_liquidation_targets — orchestration capability provided by agentnet.native. Catalog status: PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: compose ready; upstream capability not routed.
+
+## Agentnet · Fanout
+capability_id: agentnet.fanout
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8747/task_registry
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.fanout/
+description: Task Registry: create, list, accept, submit, result, verify, fanout, compose. Shared primitive over JSON persistence + state machine. (cert7 batch 2026-08-30)
+
+## Agentnet · Marketplace · Resell
+capability_id: agentnet.marketplace.resell
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8751/v1/{capability_id}
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.marketplace.resell/
+description: agentnet.marketplace.resell — labor_market capability provided by agentnet.native. Catalog status: PLANNED. Contract: ATTEMPT. Transport class: REQUEST_RESPONSE. Implementation gap: labor-market runtime not built.
+
+## Agentnet · Mempool Arb Scan
+capability_id: agentnet.mempool_arb_scan
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.mempool_arb_scan/
+description: agentnet.mempool_arb_scan — orchestration capability provided by agentnet.native. Catalog status: PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: compose ready; upstream capability not routed.
+
+## Canary
+capability_id: agentnet.mev-liquidations-canary.v1
+provider: Agentnet-C1-Canary
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: https://sdk.advalorem.io/c1-canary
+method: canary
+price: $0.0100 USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.mev-liquidations-canary.v1/
+description: Self-service registration draft — agentnet.mev-liquidations-canary.v1
+
+## Agentnet · Provider · Offer
+capability_id: agentnet.provider.offer
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8751/v1/{capability_id}
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.provider.offer/
+description: agentnet.provider.offer — labor_market capability provided by agentnet.native. Catalog status: PLANNED. Contract: ATTEMPT. Transport class: REQUEST_RESPONSE. Implementation gap: labor-market runtime not built.
+
+## Agentnet · Subcontract
+capability_id: agentnet.subcontract
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8751/v1/{capability_id}
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.subcontract/
+description: agentnet.subcontract — orchestration capability provided by agentnet.native. Catalog status: PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: orchestration engine not built.
+
+## Agentnet · Task · Accept
+capability_id: agentnet.task.accept
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8747/task_registry
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.task.accept/
+description: Task Registry: create, list, accept, submit, result, verify, fanout, compose. Shared primitive over JSON persistence + state machine. (cert7 batch 2026-08-30)
+
+## Agentnet · Task · Create
+capability_id: agentnet.task.create
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8747/task_registry
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.task.create/
+description: Task Registry: create, list, accept, submit, result, verify, fanout, compose. Shared primitive over JSON persistence + state machine. (cert7 batch 2026-08-30)
+
+## Agentnet · Task · List
+capability_id: agentnet.task.list
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8747/task_registry
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.task.list/
+description: Task Registry: create, list, accept, submit, result, verify, fanout, compose. Shared primitive over JSON persistence + state machine. (cert7 batch 2026-08-30)
+
+## Agentnet · Task · Result
+capability_id: agentnet.task.result
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8747/task_registry
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.task.result/
+description: Task Registry: create, list, accept, submit, result, verify, fanout, compose. Shared primitive over JSON persistence + state machine. (cert7 batch 2026-08-30)
+
+## Agentnet · Task · Submit
+capability_id: agentnet.task.submit
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8747/task_registry
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.task.submit/
+description: Task Registry: create, list, accept, submit, result, verify, fanout, compose. Shared primitive over JSON persistence + state machine. (cert7 batch 2026-08-30)
+
+## Agentnet · Verify
+capability_id: agentnet.verify
+provider: Agentnet.Native
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8747/task_registry
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/agentnet.verify/
+description: Task Registry: create, list, accept, submit, result, verify, fanout, compose. Shared primitive over JSON persistence + state machine. (cert7 batch 2026-08-30)
+
+## AI classification
+capability_id: ai.classify
+provider: Perplexity
+availability: Available
+canonical_state: GREEN
+endpoint: /agent/v1/rpc
+method: POST
+price: $0.0100 USDC
+url: https://agentic.advalorem.io/capabilities/ai.classify/
+description: Sonar-backed text classification
+
+## Arb · Dex Opportunity Feed
+capability_id: arb.dex_opportunity_feed
+provider: Advalorem.Arb
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/arb.dex_opportunity_feed/
+description: arb.dex_opportunity_feed — arb capability provided by advalorem.arb. Catalog status: PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: arbitrage engine not built.
+
+## Arb · Route History
+capability_id: arb.route_history
+provider: Advalorem.Arb
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/arb.route_history/
+description: arb.route_history — arb capability provided by advalorem.arb. Catalog status: PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: arbitrage engine not built.
+
+## Managed browser session
+capability_id: browser.session
+provider: Browserbase
+availability: Coming Soon
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.0038 USDC
+url: https://agentic.advalorem.io/capabilities/browser.session/
+description: Browserbase managed remote browser
+
+## Builder · Bundle Status By Txhash
+capability_id: builder.bundle_status_by_txhash
+provider: AdValorem Builder
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8748/builder.bundle_status_by_txhash
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/builder.bundle_status_by_txhash/
+description: Bundle Status: truthful lifecycle lookup over local bundle ledger. Unknown txs return unknown. (cert7 batch 2026-08-30)
+
+## Bundle Submission
+capability_id: builder.bundle_submission
+provider: AdValorem Builder
+availability: Available Now
+canonical_state: GREEN
+endpoint: https://builder.advalorem.io/agent/v1/rpc
+method: submit
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/builder.bundle_submission/
+description: AgentNet Execution API method submit_bundle over JSON-RPC. Current invocation gate is bearer auth (short-lived token issued by AdValorem to design partners). x402 v2 descriptor advertised for future paid settlement (A6). MCP surface at same endpoint publishes agentnet.echo.
+
+## Private Orderflow
+capability_id: builder.private_orderflow
+provider: AdValorem Builder
+availability: Available Now
+canonical_state: GREEN
+endpoint: https://builder.advalorem.io/rpc
+method: send
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/builder.private_orderflow/
+description: Route a signed Ethereum transaction through the AdValorem private rail. Auth is X-Flashbots-Signature over the JSON-RPC body (Flashbots-compatible signature scheme); distinct from bundle submission which is bearer-gated. Paid settlement deferred to A6.
+
+## Builder · Top Builders Recent
+capability_id: builder.top_builders_recent
+provider: AdValorem Builder
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/builder.top_builders_recent/
+description: builder.top_builders_recent — builder_data capability provided by advalorem.builder. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Structured extract from document
+capability_id: extract.document
+provider: Firecrawl
+availability: Coming Soon
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.0190 USDC
+url: https://agentic.advalorem.io/capabilities/extract.document/
+description: Firecrawl document extract
+
+## Extract tabular data
+capability_id: extract.table
+provider: Netintel
+availability: Coming Soon
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.1900 USDC
+url: https://agentic.advalorem.io/capabilities/extract.table/
+description: Structured table extraction via netintel
+
+## Structured extract from URL
+capability_id: extract.url
+provider: Perplexity
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.1140 USDC
+url: https://agentic.advalorem.io/capabilities/extract.url/
+description: Perplexity Agent URL extract (degraded)
+
+## Translate text to a target language
+capability_id: interzoid.translatetoany
+provider: Interzoid
+availability: Blocked (upstream)
+canonical_state: UPSTREAM_BLOCKED
+endpoint: https://api.interzoid.com/translatetoany
+method: GET
+price: $0.0100 USDC
+url: https://agentic.advalorem.io/capabilities/interzoid.translatetoany/
+description: Machine-translate arbitrary text into a target language via Interzoid's translatetoany endpoint. [PARKED 2026-08-30: upstream blocked — wire/version mismatch; not executable; R1 frozen.]
+
+## Company enrichment
+capability_id: leads.company_enrich
+provider: Stablepeopledata
+availability: Coming Soon
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.1900 USDC
+url: https://agentic.advalorem.io/capabilities/leads.company_enrich/
+description: PDL-backed company enrichment
+
+## Company search
+capability_id: leads.company_search
+provider: Apollo
+availability: Execution Degraded
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.0380 USDC
+url: https://agentic.advalorem.io/capabilities/leads.company_search/
+description: Apollo-backed company search
+
+## Contact enrichment
+capability_id: leads.contact_enrich
+provider: Stablepeopledata
+availability: Coming Soon
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.5320 USDC
+url: https://agentic.advalorem.io/capabilities/leads.contact_enrich/
+description: PDL-backed contact enrichment
+
+## Email verification
+capability_id: leads.email_verify
+provider: Hunter
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.0570 USDC
+url: https://agentic.advalorem.io/capabilities/leads.email_verify/
+description: Hunter-backed email verification
+
+## Person search
+capability_id: leads.person_search
+provider: Apollo
+availability: Coming Soon
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.0940 USDC
+url: https://agentic.advalorem.io/capabilities/leads.person_search/
+description: Apollo-backed person search
+
+## Composed prospect list
+capability_id: leads.prospect_list
+provider: Agentnet.Native
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $1.0000 USDC
+url: https://agentic.advalorem.io/capabilities/leads.prospect_list/
+description: AgentNet-native composed outcome
+
+## Equity market data
+capability_id: market.equities
+provider: Two_S_Io.Jeetscreener
+availability: Coming Soon
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.0950 USDC
+url: https://agentic.advalorem.io/capabilities/market.equities/
+description: JeetScreener equity market data via 2s.io
+
+## Market metrics indicator
+capability_id: market.metrics_indicator
+provider: Glassnode
+availability: Execution Degraded
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.1900 USDC
+url: https://agentic.advalorem.io/capabilities/market.metrics_indicator/
+description: Glassnode on-chain metric indicator
+
+## Crypto asset price
+capability_id: market.price
+provider: Coinmarketcap
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8752/v1/market.price
+method: POST
+price: $0.0020 USDC
+url: https://agentic.advalorem.io/capabilities/market.price/
+description: Real-time crypto asset price (USD and major pairs) served by a durable AgentNet market-data service backed by CoinGecko with Bitstamp as a redundant fallback. Live, verified against production.
+
+## Trending assets
+capability_id: market.trending
+provider: Coinmarketcap
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8752/v1/market.trending
+method: POST
+price: $0.0020 USDC
+url: https://agentic.advalorem.io/capabilities/market.trending/
+description: Trending crypto assets (CoinGecko trending search) served by a durable AgentNet market-data service. Live, verified against production.
+
+## Wallet intelligence
+capability_id: market.wallet_intel
+provider: Nansen
+availability: Coming Soon
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.1900 USDC
+url: https://agentic.advalorem.io/capabilities/market.wallet_intel/
+description: Nansen wallet intelligence
+
+## MEV Accuracy Archive
+capability_id: mev.accuracy_archive
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: https://mev.advalorem.io/intelligence/accuracy-archive
+method: GET
+price: $0.0000 USDC
+url: https://agentic.advalorem.io/capabilities/mev.accuracy_archive/
+description: Rolling precision/recall vs realized competitor liquidations.
+
+## Mev · Builder Destinations
+capability_id: mev.builder_destinations
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8744/v1/mev.builder_destinations
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.builder_destinations/
+description: MEV builder-destinations query over the mev_intel.route_audit substrate (live Postgres). Returns which builders a given orderflow bundle was routed to: chosen_builder, alternate_builders, score, estimated_revenue, submission_style. Params: bundle_id (exact), since/until (ISO dates), limit 1..200 (default 50). Backed data verified 2026-08-30: 1 row.
+
+## Builder Recommendation
+capability_id: mev.builder_recommendation
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: https://mev.advalorem.io/intelligence/builder-recommendation
+method: GET
+price: $0.2500 USDC
+url: https://agentic.advalorem.io/capabilities/mev.builder_recommendation/
+description: Best builder route right now for target inclusion outcome.
+
+## Daily MEV Report
+capability_id: mev.daily_report
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: https://mev.advalorem.io/intelligence/daily-report
+method: GET
+price: $0.0000 USDC
+url: https://agentic.advalorem.io/capabilities/mev.daily_report/
+description: Daily briefing: competitor count, funnel, top candidate, daily score.
+
+## Mev · Fee · Next Block Estimator
+capability_id: mev.fee.next_block_estimator
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8745/v1/{capability_id}
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.fee.next_block_estimator/
+description: mev.fee.next_block_estimator — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Mev · Feed
+capability_id: mev.feed
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.feed/
+description: mev.feed — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Mev · Flow Eob
+capability_id: mev.flow_eob
+provider: AdValorem MEV
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.flow_eob/
+description: mev.flow_eob — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Mev · Liquidation · Candidates Now
+capability_id: mev.liquidation.candidates_now
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.liquidation.candidates_now/
+description: mev.liquidation.candidates_now — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Liquidation Waves
+capability_id: mev.liquidation_waves
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: https://mev.advalorem.io/intelligence/liquidation-waves
+method: GET
+price: $0.5000 USDC
+url: https://agentic.advalorem.io/capabilities/mev.liquidation_waves/
+description: Predicted liquidation waves from oracle pressure + HF distribution across Aave, Compound, and Morpho.
+
+## Mev · Mempool · By Token
+capability_id: mev.mempool.by_token
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8745/v1/{capability_id}
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.mempool.by_token/
+description: mev.mempool.by_token — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Mev · Mempool · Sample
+capability_id: mev.mempool.sample
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8745/v1/{capability_id}
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.mempool.sample/
+description: mev.mempool.sample — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## MEV Opportunity Feed
+capability_id: mev.opportunity_feed
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: https://mev.advalorem.io/intelligence/feed
+method: GET
+price: $0.1000 USDC
+url: https://agentic.advalorem.io/capabilities/mev.opportunity_feed/
+description: Risk-enriched MEV opportunity stream (arbitrage, cross-pool, backrun candidates).
+
+## Mev · Ops Pro
+capability_id: mev.ops_pro
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.ops_pro/
+description: mev.ops_pro — mev_ops capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Mev · Oracle · Pressure Series
+capability_id: mev.oracle.pressure_series
+provider: AdValorem MEV
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.oracle.pressure_series/
+description: mev.oracle.pressure_series — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Mev · Orderflow Origin Flow
+capability_id: mev.orderflow_origin_flow
+provider: AdValorem MEV
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.orderflow_origin_flow/
+description: mev.orderflow_origin_flow — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Mev · Orderflow Pro
+capability_id: mev.orderflow_pro
+provider: AdValorem MEV
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.orderflow_pro/
+description: mev.orderflow_pro — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Mev · Orderflow Source Discover
+capability_id: mev.orderflow_source_discover
+provider: AdValorem MEV
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.orderflow_source_discover/
+description: mev.orderflow_source_discover — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Mev · Reasoning Intelligence
+capability_id: mev.reasoning_intelligence
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.reasoning_intelligence/
+description: mev.reasoning_intelligence — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Mev · Refund Intelligence
+capability_id: mev.refund_intelligence
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8744/v1/mev.refund_intelligence
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.refund_intelligence/
+description: MEV refund-intelligence query over the mev_intel.refund_log substrate (live Postgres). Returns refund events for failed/reverted/expired/replaced bundles: bundle_id, builder_id, chain, refund_reason, refund_status lifecycle (requested..received/denied/error), amounts, external_refund_id, http_status. Params: bundle_id (exact), since/until (ISO dates), limit 1..200 (default 50). Backed data verified 2026-08-30: 3 rows.
+
+## Mev · Replacement Intelligence
+capability_id: mev.replacement_intelligence
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8744/v1/mev.replacement_intelligence
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.replacement_intelligence/
+description: MEV replacement-intelligence query over the mev_intel.replacement_log substrate (live Postgres). Returns the bundle-replacement decision stream: replacement_uuid, seq, old/new bundle ids, chain, reason_type, delta_ev_eth vs threshold_eth, action (accept_first/replace/hold/reject_stale) and decision_path. Params: replacement_uuid (exact), since/until (ISO dates), limit 1..200 (default 50). Backed data verified 2026-08-30: 7 rows.
+
+## Mev · Route Kpi
+capability_id: mev.route_kpi
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8746/v1/{capability_id}
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.route_kpi/
+description: mev.route_kpi — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Mev · Route Lookup
+capability_id: mev.route_lookup
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8744/v1/mev.route_lookup
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.route_lookup/
+description: MEV route-decision lookup over the mev_intel.route_audit substrate (live Postgres). Returns the full builder-routing decision for a bundle: chosen_builder, alternate_builders, score, estimated_revenue, actual_outcome, actual_revenue, decision_version, submission_style. Params: bundle_id (exact), since/until (ISO dates), limit 1..200 (default 50). Backed data verified 2026-08-30: 1 row (bndl_a71_1780500819_7168, outcome=included).
+
+## Searcher Leaderboard
+capability_id: mev.searcher_leaderboard
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: https://mev.advalorem.io/intelligence/searcher-leaderboard
+method: GET
+price: $0.2500 USDC
+url: https://agentic.advalorem.io/capabilities/mev.searcher_leaderboard/
+description: Top MEV searchers by landed fires (rolling 4h window).
+
+## Mev · Stream · Builder
+capability_id: mev.stream.builder
+provider: AdValorem Builder
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8750/v1/stream/{capability_id}
+method: GET
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.stream.builder/
+description: Real-time event stream over SSE (HTTP transport). Single shared event layer (:8750) polling verified substrate (reth RPC / mev_intel PG / bundle ledger). Canonical envelope with monotonic seq, bounded ring buffer, Last-Event-ID resume, idle heartbeat, clean termination. Polling is an implementation mechanism; events are truthfully produced from existing sources.
+
+## Mev · Stream · Crossings
+capability_id: mev.stream.crossings
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8750/v1/stream/{capability_id}
+method: GET
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.stream.crossings/
+description: Real-time event stream over SSE (HTTP transport). Single shared event layer (:8750) polling verified substrate (reth RPC / mev_intel PG / bundle ledger). Canonical envelope with monotonic seq, bounded ring buffer, Last-Event-ID resume, idle heartbeat, clean termination. Polling is an implementation mechanism; events are truthfully produced from existing sources.
+
+## Mev · Stream · Opportunities
+capability_id: mev.stream.opportunities
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8750/v1/stream/{capability_id}
+method: GET
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.stream.opportunities/
+description: Real-time event stream over SSE (HTTP transport). Single shared event layer (:8750) polling verified substrate (reth RPC / mev_intel PG / bundle ledger). Canonical envelope with monotonic seq, bounded ring buffer, Last-Event-ID resume, idle heartbeat, clean termination. Polling is an implementation mechanism; events are truthfully produced from existing sources.
+
+## Mev · Stream · Orderflow
+capability_id: mev.stream.orderflow
+provider: AdValorem MEV
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.stream.orderflow/
+description: mev.stream.orderflow — streaming capability provided by advalorem.mev. Catalog status: PLANNED. Contract: OUTCOME. Transport class: WEBSOCKET_STREAM. Implementation gap: streaming gateway not built.
+
+## Mev · Top Candidates
+capability_id: mev.top_candidates
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.top_candidates/
+description: mev.top_candidates — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Mev · Top Crossings
+capability_id: mev.top_crossings
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.top_crossings/
+description: mev.top_crossings — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Mev · Trace Intelligence
+capability_id: mev.trace_intelligence
+provider: AdValorem MEV
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/mev.trace_intelligence/
+description: mev.trace_intelligence — mev_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Retrieve Octodamus agent signal
+capability_id: octodamus.agent_signal
+provider: Octodamus
+availability: Blocked (upstream)
+canonical_state: UPSTREAM_BLOCKED
+endpoint: https://api.octodamus.com/v2/agent-signal
+method: GET
+price: $0.0100 USDC
+url: https://agentic.advalorem.io/capabilities/octodamus.agent_signal/
+description: Retrieve the current Octodamus agent signal via the v2/agent-signal endpoint. [PARKED 2026-08-30: upstream blocked — wire/version mismatch; not executable; R1 frozen.]
+
+## Octodamus · Market Snapshot
+capability_id: octodamus.market_snapshot
+provider: Octodamus
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/octodamus.market_snapshot/
+description: octodamus.market_snapshot — reseller capability provided by octodamus. Catalog status: PLANNED. Contract: ATTEMPT. Transport class: REQUEST_RESPONSE. Implementation gap: reseller wiring not yet added.
+
+## On-chain SQL query
+capability_id: onchain.sql_query
+provider: Dune
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.0950 USDC
+url: https://agentic.advalorem.io/capabilities/onchain.sql_query/
+description: Dune Analytics SQL query
+
+## Oracle · Stream · Pressure
+capability_id: oracle.stream.pressure
+provider: AdValorem MEV
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/oracle.stream.pressure/
+description: oracle.stream.pressure — streaming capability provided by advalorem.mev. Catalog status: PLANNED. Contract: OUTCOME. Transport class: WEBSOCKET_STREAM. Implementation gap: streaming gateway not built.
+
+## Structured extract from URL
+capability_id: perplexity.data_extract
+provider: Perplexity
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: $0.1200 USDC
+url: https://agentic.advalorem.io/capabilities/perplexity.data_extract/
+description: Structured extract from URL
+
+## Named-entity fact retrieval
+capability_id: perplexity.entity_lookup
+provider: Perplexity
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: $0.0800 USDC
+url: https://agentic.advalorem.io/capabilities/perplexity.entity_lookup/
+description: Named-entity fact retrieval
+
+## Perplexity-backed multi-source research brief
+capability_id: perplexity.research_brief
+provider: Perplexity
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: $0.1500 USDC
+url: https://agentic.advalorem.io/capabilities/perplexity.research_brief/
+description: Perplexity-backed multi-source research brief
+
+## Polymarket · Whale Activity Feed
+capability_id: polymarket.whale_activity_feed
+provider: AdValorem MEV
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/polymarket.whale_activity_feed/
+description: polymarket.whale_activity_feed — prediction_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Polystrategy · Copytrade Signal
+capability_id: polystrategy.copytrade_signal
+provider: Advalorem.Polystrategy
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/polystrategy.copytrade_signal/
+description: polystrategy.copytrade_signal — polystrategy capability provided by advalorem.polystrategy. Catalog status: PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: polystrategy engine not built.
+
+## Polystrategy · Prediction Market Snapshot
+capability_id: polystrategy.prediction_market_snapshot
+provider: Advalorem.Polystrategy
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8745/v1/{capability_id}
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/polystrategy.prediction_market_snapshot/
+description: polystrategy.prediction_market_snapshot — polystrategy capability provided by advalorem.polystrategy. Catalog status: PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: polystrategy engine not built.
+
+## Rbuilder · Builder Revenue Lookup
+capability_id: rbuilder.builder_revenue_lookup
+provider: AdValorem Builder
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8744/v1/rbuilder.builder_revenue_lookup
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/rbuilder.builder_revenue_lookup/
+description: Builder revenue lookup over the mev_intel.builder_revenue_log substrate (live Postgres). Returns per-bundle builder revenue records with ABR source (rebate/orderflow_payment/routing_fee/revenue_share), estimated vs actual revenue (USD+ETH), flow_type, submission_style, reconciled where actuals are booked. Params: builder_id (exact), since/until (ISO dates), limit 1..200 (default 50). Backed data verified 2026-08-30: 1 reconciled row (buildernet, est 120.50 -> actual 135.20 USD).
+
+## Rbuilder · Bundle Inclusion Attestation
+capability_id: rbuilder.bundle_inclusion_attestation
+provider: AdValorem Builder
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8748/builder.bundle_status_by_txhash
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/rbuilder.bundle_inclusion_attestation/
+description: Bundle Status: truthful lifecycle lookup over local bundle ledger. Unknown txs return unknown. (cert7 batch 2026-08-30)
+
+## Rbuilder · Gateway Dedup Stats
+capability_id: rbuilder.gateway_dedup_stats
+provider: AdValorem Builder
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8748/builder.bundle_status_by_txhash
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/rbuilder.gateway_dedup_stats/
+description: Bundle Status: truthful lifecycle lookup over local bundle ledger. Unknown txs return unknown. (cert7 batch 2026-08-30)
+
+## Rbuilder · Relay Fanout Status
+capability_id: rbuilder.relay_fanout_status
+provider: AdValorem Builder
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8748/builder.bundle_status_by_txhash
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/rbuilder.relay_fanout_status/
+description: Bundle Status: truthful lifecycle lookup over local bundle ledger. Unknown txs return unknown. (cert7 batch 2026-08-30)
+
+## Rbuilder · Stream · Status
+capability_id: rbuilder.stream.status
+provider: AdValorem Builder
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8750/v1/stream/{capability_id}
+method: GET
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/rbuilder.stream.status/
+description: Real-time event stream over SSE (HTTP transport). Single shared event layer (:8750) polling verified substrate (reth RPC / mev_intel PG / bundle ledger). Canonical envelope with monotonic seq, bounded ring buffer, Last-Event-ID resume, idle heartbeat, clean termination. Polling is an implementation mechanism; events are truthfully produced from existing sources.
+
+## Company research brief
+capability_id: research.company_brief
+provider: Perplexity
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.1430 USDC
+url: https://agentic.advalorem.io/capabilities/research.company_brief/
+description: Perplexity Agent company brief (degraded)
+
+## Competitor scan
+capability_id: research.competitor_scan
+provider: Perplexity
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.1900 USDC
+url: https://agentic.advalorem.io/capabilities/research.competitor_scan/
+description: Sonar-backed competitor scan (planned)
+
+## Composed lead brief
+capability_id: research.lead_brief
+provider: Agentnet.Native
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.7500 USDC
+url: https://agentic.advalorem.io/capabilities/research.lead_brief/
+description: AgentNet-native composed outcome
+
+## Reth · Block Lookup
+capability_id: reth.block_lookup
+provider: Advalorem.Reth
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8741/v1/reth.block_lookup
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/reth.block_lookup/
+description: reth.block_lookup — reth_commodity capability provided by advalorem.reth. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: ATTEMPT. Transport class: JSONRPC. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Reth · Chain State
+capability_id: reth.chain_state
+provider: Advalorem.Reth
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8741/v1/reth.chain_state
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/reth.chain_state/
+description: reth.chain_state — reth_commodity capability provided by advalorem.reth. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: ATTEMPT. Transport class: JSONRPC. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Reth · Logs Query
+capability_id: reth.logs_query
+provider: Advalorem.Reth
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8746/v1/{capability_id}
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/reth.logs_query/
+description: reth.logs_query — reth_commodity capability provided by advalorem.reth. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: ATTEMPT. Transport class: JSONRPC. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Reth · Mempool · Snapshot
+capability_id: reth.mempool.snapshot
+provider: Advalorem.Reth
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8741/v1/reth.mempool.snapshot
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/reth.mempool.snapshot/
+description: reth.mempool.snapshot — reth_commodity capability provided by advalorem.reth. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: ATTEMPT. Transport class: JSONRPC. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Reth · Receipt Lookup
+capability_id: reth.receipt_lookup
+provider: Advalorem.Reth
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8741/v1/reth.receipt_lookup
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/reth.receipt_lookup/
+description: reth.receipt_lookup — reth_commodity capability provided by advalorem.reth. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: ATTEMPT. Transport class: JSONRPC. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Reth · State Call
+capability_id: reth.state_call
+provider: Advalorem.Reth
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8741/v1/reth.state_call
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/reth.state_call/
+description: reth.state_call — reth_commodity capability provided by advalorem.reth. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: ATTEMPT. Transport class: JSONRPC. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Reth · Stream · Blocks
+capability_id: reth.stream.blocks
+provider: Advalorem.Reth
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8750/v1/stream/{capability_id}
+method: GET
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/reth.stream.blocks/
+description: Real-time event stream over SSE (HTTP transport). Single shared event layer (:8750) polling verified substrate (reth RPC / mev_intel PG / bundle ledger). Canonical envelope with monotonic seq, bounded ring buffer, Last-Event-ID resume, idle heartbeat, clean termination. Polling is an implementation mechanism; events are truthfully produced from existing sources.
+
+## Reth · Stream · Logs
+capability_id: reth.stream.logs
+provider: Advalorem.Reth
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8750/v1/stream/{capability_id}
+method: GET
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/reth.stream.logs/
+description: Real-time event stream over SSE (HTTP transport). Single shared event layer (:8750) polling verified substrate (reth RPC / mev_intel PG / bundle ledger). Canonical envelope with monotonic seq, bounded ring buffer, Last-Event-ID resume, idle heartbeat, clean termination. Polling is an implementation mechanism; events are truthfully produced from existing sources.
+
+## Reth · Stream · Mempool
+capability_id: reth.stream.mempool
+provider: Advalorem.Reth
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8750/v1/stream/{capability_id}
+method: GET
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/reth.stream.mempool/
+description: Real-time event stream over SSE (HTTP transport). Single shared event layer (:8750) polling verified substrate (reth RPC / mev_intel PG / bundle ledger). Canonical envelope with monotonic seq, bounded ring buffer, Last-Event-ID resume, idle heartbeat, clean termination. Polling is an implementation mechanism; events are truthfully produced from existing sources.
+
+## Reth · Transaction Lookup
+capability_id: reth.transaction_lookup
+provider: Advalorem.Reth
+availability: Available Now
+canonical_state: GREEN
+endpoint: http://127.0.0.1:8741/v1/reth.transaction_lookup
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/reth.transaction_lookup/
+description: reth.transaction_lookup — reth_commodity capability provided by advalorem.reth. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: ATTEMPT. Transport class: JSONRPC. Implementation gap: commercial routing + billing wire not yet integrated.
+
+## Fetch URL contents
+capability_id: search.contents
+provider: Exa
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.0020 USDC
+url: https://agentic.advalorem.io/capabilities/search.contents/
+description: Fetch cleaned page contents via Exa
+
+## Web search
+capability_id: search.web
+provider: Perplexity
+availability: Available Now
+canonical_state: GREEN
+endpoint: no endpoint yet
+method: POST
+price: $0.0133 USDC
+url: https://agentic.advalorem.io/capabilities/search.web/
+description: Ranked web search via Exa
+
+## Geocode an address string
+capability_id: two_s_io.geocode_address
+provider: 2s.io
+availability: Blocked (upstream)
+canonical_state: UPSTREAM_BLOCKED
+endpoint: https://2s.io/api/geocode/address
+method: GET
+price: $0.0025 USDC
+url: https://agentic.advalorem.io/capabilities/two_s_io.geocode_address/
+description: Geocode a free-form address string against OpenStreetMap via the 2s.io geocode/address endpoint. [PARKED 2026-08-30: upstream blocked — wire/version mismatch; not executable; R1 frozen.]
+
+## Twos · Io · Research Brief
+capability_id: twos.io.research_brief
+provider: 2s.io
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: on wire USDC
+url: https://agentic.advalorem.io/capabilities/twos.io.research_brief/
+description: twos.io.research_brief — reseller capability provided by two_s_io. Catalog status: PLANNED. Contract: ATTEMPT. Transport class: REQUEST_RESPONSE. Implementation gap: reseller wiring not yet added.
+
+## Scrape a web page
+capability_id: web.scrape
+provider: Firecrawl
+availability: Planned
+canonical_state: NOT_SELLABLE
+endpoint: no endpoint yet
+method: POST
+price: $0.0190 USDC
+url: https://agentic.advalorem.io/capabilities/web.scrape/
+description: Firecrawl-backed page scrape
+
