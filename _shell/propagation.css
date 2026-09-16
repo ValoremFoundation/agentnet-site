@@ -1,0 +1,111 @@
+/* ------------------------------------------------------------------
+   A2.7 propagation override — loaded AFTER shell.css.
+   Single purpose: fix outcome/capability card title truncation by
+   information-hierarchy reflow. Typography is unchanged (same family,
+   same size, same weight) — the title simply gets the full card width
+   and a two-line allowance, provider/price metadata moves to a row
+   beneath the title, and the provenance badge sits in a top-right
+   corner slot that no longer competes for title width.
+   ------------------------------------------------------------------ */
+
+/* Root cause: .adv-card-link is display:inline-flex (row), so a card
+   carrying both .adv-cap-card and .adv-card-link laid badge + title +
+   summary out on ONE line and the clamped title shrank to "Translate te…".
+   Any card-shaped link must stack. */
+.adv-cap-card.adv-card-link,
+.adv-cap-card.adv-outcome-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  white-space: normal;
+  text-decoration: none;
+}
+
+.adv-outcome-card {
+  position: relative;
+  /* reserve the corner slot so the badge never overlaps line 1 of the title */
+  padding-top: calc(var(--space-6) + 30px);
+  min-height: 210px;
+}
+.adv-outcome-badge {
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-5);
+  display: inline-flex;
+  z-index: 1;
+}
+
+/* Title: full card width, two full lines, SAME typography as .adv-card-title. */
+.adv-outcome-title {
+  width: 100%;
+  max-width: 100%;
+  flex: 0 0 auto;
+  margin: 0 0 10px;
+  min-height: 2.6em;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  text-overflow: clip;
+}
+
+/* Metadata row beneath the title: provider · price · availability. */
+.adv-outcome-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 0 0 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--fg-dim);
+}
+.adv-outcome-meta .adv-outcome-provider { color: var(--fg-soft); }
+.adv-outcome-meta .adv-price-tag { font-size: 12px; padding: 2px 9px; }
+.adv-outcome-meta .adv-outcome-avail {
+  color: var(--fg-dim);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 2px 9px;
+}
+.adv-outcome-card .adv-card-desc { margin-bottom: 12px; }
+.adv-outcome-card .adv-card-foot {
+  display: flex;
+  margin-top: auto;
+  width: 100%;
+}
+.adv-outcome-card .adv-card-id { margin: 0; }
+
+@media (max-width: 560px) {
+  .adv-outcome-card { padding-top: calc(var(--space-6) + 26px); }
+  .adv-outcome-title { min-height: 0; }
+}
+
+/* ---- supporting utilities used by propagated pages (no token changes) ---- */
+.adv-grid-3 { grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); }
+.adv-h3 { font-family: var(--font-display); font-size: var(--text-md); font-weight: 600; margin: 24px 0 8px; }
+.adv-body { color: var(--fg-soft); line-height: 1.6; margin: 0 0 12px; max-width: 72ch; }
+.adv-list { margin: 0; padding-left: 20px; line-height: 1.85; color: var(--fg-soft); }
+.adv-prompt-list code { font-size: 12.5px; }
+.adv-empty { padding: 24px 0; }
+.adv-hero-search {
+  flex: 1; min-width: 280px; padding: 14px 16px;
+  background: var(--bg-elev); border: 1px solid var(--line);
+  border-radius: 8px; color: var(--fg); font-family: var(--font-mono);
+}
+.adv-pre {
+  display: block; padding: 20px; background: var(--bg-elev);
+  border: 1px solid var(--line); border-radius: 8px;
+  overflow-x: auto; line-height: 1.6; font-size: 12.5px;
+}
+.adv-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+.adv-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.adv-table th, .adv-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--line); }
+.adv-table th { font-family: var(--font-mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--fg-dim); }
+.adv-table td code { font-size: 12px; }
+.adv-machine-contract dt { font-family: var(--font-mono); }

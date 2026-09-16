@@ -1,0 +1,973 @@
+/* ============================================================
+   AdValorem Shared Shell — Components
+   Header · Domain Switcher · Footer · Buttons · Badges · Cards
+   Load AFTER tokens.css + base.css.
+   ============================================================ */
+
+/* ---------- Nav ---------- */
+.adv-nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px);
+  background: rgba(10, 10, 11, 0.72);
+  border-bottom: 1px solid var(--line);
+}
+.adv-nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: var(--nav-h);
+  gap: var(--space-6);
+}
+.adv-brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--accent);
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 17px; letter-spacing: -0.02em;
+}
+.adv-brand .brand-name { color: var(--fg); }
+.adv-brand .logo { transition: transform .3s ease; }
+.adv-brand:hover { text-decoration: none; }
+.adv-brand:hover .logo { transform: translateY(-2px); }
+
+.adv-nav-links {
+  display: flex; align-items: center; gap: 26px;
+  font-family: var(--font-display); font-weight: 500;
+}
+.adv-nav-links > a:not(.btn) {
+  color: var(--fg-soft);
+  font-size: 14.5px;
+  transition: color .15s ease;
+}
+.adv-nav-links > a:not(.btn):hover { color: var(--fg); text-decoration: none; }
+.adv-nav-links > a.active { color: var(--fg); }
+
+@media (max-width: 720px) {
+  .adv-nav-links { gap: 14px; }
+  .adv-nav-links > a.hide-mobile { display: none; }
+}
+
+/* ---------- Domain Switcher ---------- */
+/* A tab-style network map. Fixed order: Agentic / Builder / MEV.
+   Non-current tabs behave as plain hyperlinks; current tab is highlighted.
+   Include in nav or as standalone. */
+.adv-switcher {
+  display: inline-flex;
+  gap: 2px;
+  background: var(--bg-elev);
+  padding: 3px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.adv-switcher a {
+  padding: 6px 11px;
+  border-radius: 6px;
+  color: var(--fg-soft);
+  transition: background .15s, color .15s;
+  display: inline-flex; align-items: center; gap: 6px;
+  letter-spacing: 0.02em;
+}
+.adv-switcher a:hover { color: var(--fg); text-decoration: none; }
+.adv-switcher a[aria-current="page"],
+.adv-switcher a.current {
+  background: var(--bg-elev-2);
+  color: var(--fg);
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+/* Per-domain dot */
+.adv-switcher a[data-domain="agentic"]::before { background: var(--domain-agentic); }
+.adv-switcher a[data-domain="builder"]::before { background: var(--domain-builder); }
+.adv-switcher a[data-domain="mev"]::before     { background: var(--domain-mev); }
+.adv-switcher a::before {
+  content: "";
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  opacity: 0.85;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: 15px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+  border: 1px solid transparent;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.btn:hover { text-decoration: none; }
+.btn-sm { padding: 9px 15px; font-size: 13.5px; }
+.btn-lg { padding: 16px 28px; font-size: 16.5px; }
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: var(--shadow-accent);
+}
+.btn-primary:hover {
+  background: #2bffa0;
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px #2bffa0, 0 10px 40px -8px rgba(0, 255, 136, 0.3);
+}
+.btn-ghost {
+  color: var(--fg);
+  border-color: var(--line-strong);
+  background: rgba(255, 255, 255, 0.02);
+}
+.btn-ghost:hover {
+  border-color: var(--fg-soft);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-1px);
+}
+.btn .arr { transition: transform .2s ease; }
+.btn:hover .arr { transform: translateX(3px); }
+.btn-code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+/* ---------- Status Badges (LIVE / PILOT / PLANNED / PARTIAL / STALE) ---------- */
+.adv-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 9px 3px 8px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+.adv-badge::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+}
+
+.adv-badge-live    { color: var(--status-live);    background: var(--status-live-bg);    border: 1px solid var(--status-live-br); }
+.adv-badge-live::before    { background: var(--status-live);    box-shadow: 0 0 6px var(--status-live); animation: adv-pulse 2.4s infinite; }
+.adv-badge-pilot   { color: var(--status-pilot);   background: var(--status-pilot-bg);   border: 1px solid var(--status-pilot-br); }
+.adv-badge-pilot::before   { background: var(--status-pilot); }
+.adv-badge-planned { color: var(--status-planned); background: var(--status-planned-bg); border: 1px solid var(--status-planned-br); }
+.adv-badge-planned::before { background: var(--status-planned); }
+.adv-badge-partial { color: var(--status-partial); background: var(--status-partial-bg); border: 1px solid var(--status-partial-br); }
+.adv-badge-partial::before { background: var(--status-partial); }
+.adv-badge-stale   { color: var(--status-stale);   background: var(--status-stale-bg);   border: 1px solid var(--status-stale-br); }
+.adv-badge-stale::before   { background: var(--status-stale); }
+
+/* Rollup pills — plain label, no dot */
+.adv-badge-flat {
+  background: var(--bg-elev);
+  color: var(--fg-soft);
+  border: 1px solid var(--line);
+}
+.adv-badge-flat::before { display: none; }
+
+/* ---------- Capability Card ---------- */
+.adv-cap-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+  transition: border-color .18s ease, transform .18s ease;
+  position: relative;
+  overflow: hidden;
+}
+.adv-cap-card:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+.adv-cap-card[data-status="live"]::after {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--status-live), transparent);
+}
+.adv-cap-card[data-status="pilot"]::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--status-pilot), transparent);
+}
+.adv-cap-card[data-status="planned"]::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--status-planned), transparent);
+}
+
+.adv-cap-card .cap-head {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+.adv-cap-card .cap-title {
+  font-family: var(--font-display); font-size: var(--text-md); font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+.adv-cap-card .cap-id {
+  font-family: var(--font-mono); font-size: 11.5px;
+  color: var(--fg-dim);
+  margin: 2px 0 0;
+  letter-spacing: 0.02em;
+}
+.adv-cap-card .cap-summary {
+  color: var(--fg-soft);
+  font-size: var(--text-sm);
+  margin: 0 0 var(--space-4);
+  line-height: 1.55;
+}
+.adv-cap-card .cap-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2) var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+}
+.adv-cap-card .cap-meta > .k { color: var(--fg-dim); }
+.adv-cap-card .cap-meta > .v { color: var(--fg); word-break: break-all; }
+.adv-cap-card .cap-meta > .v.mono-url { color: var(--accent); }
+
+/* ---------- Capability Detail Block (used on capability pages) ---------- */
+.adv-cap-detail {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+}
+.adv-cap-detail h1 { font-size: var(--text-2xl); margin-bottom: var(--space-2); }
+.adv-cap-detail .cap-lede { color: var(--fg-soft); font-size: var(--text-md); margin: 0 0 var(--space-6); }
+.adv-cap-detail .cap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.adv-cap-detail .cap-grid .k {
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  color: var(--fg-dim); text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.adv-cap-detail .cap-grid .v {
+  font-family: var(--font-mono); font-size: var(--text-sm);
+  color: var(--fg); word-break: break-all;
+}
+
+/* ---------- Connection Tabs (buyer / provider / verify) ---------- */
+.adv-tabs {
+  display: flex; gap: 2px;
+  background: var(--bg-elev);
+  padding: 3px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  margin: var(--space-6) 0 var(--space-4);
+  overflow-x: auto;
+}
+.adv-tab {
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: var(--fg-soft);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  white-space: nowrap;
+  transition: background .15s, color .15s;
+}
+.adv-tab:hover { color: var(--fg); }
+.adv-tab[aria-selected="true"] {
+  background: var(--bg-elev-2);
+  color: var(--fg);
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+.adv-tab-panel { display: none; padding-top: var(--space-4); }
+.adv-tab-panel[aria-hidden="false"] { display: block; }
+
+/* Code block styling for tab-panel snippets */
+.adv-tab-panel pre {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+  overflow-x: auto;
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  margin: 0;
+}
+.adv-tab-panel code { color: var(--fg); }
+
+/* ---------- Footer ---------- */
+.adv-footer {
+  border-top: 1px solid var(--line);
+  padding: var(--space-10) 0 var(--space-8);
+  margin-top: var(--space-16);
+  color: var(--fg-dim);
+  font-size: 13px;
+}
+.adv-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-8);
+}
+.adv-footer-col h5 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-dim);
+  margin: 0 0 var(--space-3);
+  font-weight: 500;
+}
+.adv-footer-col a {
+  display: block;
+  color: var(--fg-soft);
+  padding: 4px 0;
+  font-size: 13.5px;
+}
+.adv-footer-col a:hover { color: var(--fg); text-decoration: none; }
+.adv-footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: var(--space-8);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-dim);
+}
+.adv-footer-bottom a { color: var(--accent); }
+
+@media (max-width: 720px) {
+  .adv-footer-grid { grid-template-columns: 1fr 1fr; }
+  .adv-footer-bottom { flex-direction: column; gap: 12px; }
+}
+
+/* ============================================================
+   AdValorem Shared Shell — Marketplace Extensions (v1.0.2)
+   ADDITIVE ONLY. Everything above this banner is frozen 1.0.1.
+   Phase 5.3: Jobs · Providers · Capabilities marketplace surface.
+   ============================================================ */
+
+/* ---------- Layout scaffolding ---------- */
+.adv-main { display: block; }
+
+.adv-section {
+  padding-block: var(--space-16) 0;
+}
+.adv-section-head {
+  margin-bottom: var(--space-8);
+  max-width: 68ch;
+}
+.adv-section-head h2 { margin-bottom: var(--space-3); }
+.adv-section-sub,
+.adv-lede {
+  color: var(--fg-soft);
+  font-size: var(--text-md);
+  margin: 0;
+  line-height: 1.6;
+}
+.adv-section-head-row {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: var(--space-6); flex-wrap: wrap;
+  margin-bottom: var(--space-8);
+}
+.adv-section-head-row .adv-section-head { margin-bottom: 0; }
+
+/* ---------- Content measure for agentic.advalorem.io (additive, scoped) ----------
+   1.0.1's .container / .container-wide keep their own definitions; this only
+   tightens the measure + gutters for this one site so header and content align. */
+body[data-domain="agentic"] .container-wide {
+  max-width: 1200px;
+  padding-inline: clamp(24px, 3.6vw, 48px);
+}
+
+/* ---------- Breadcrumb ---------- */
+.adv-breadcrumb {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--fg-dim);
+  letter-spacing: 0.04em;
+  margin: 0 0 var(--space-5);
+  padding: 0; list-style: none;
+}
+.adv-breadcrumb li { display: inline-flex; align-items: center; gap: 8px; }
+.adv-breadcrumb li + li::before { content: "/"; color: var(--fg-faint); }
+.adv-breadcrumb a { color: var(--fg-soft); }
+.adv-breadcrumb a:hover { color: var(--accent); text-decoration: none; }
+.adv-breadcrumb [aria-current="page"] { color: var(--fg); }
+
+/* ---------- Hero ---------- */
+.adv-hero {
+  padding-block: var(--space-16) var(--space-12);
+}
+.adv-hero-inner { max-width: 900px; }
+.adv-hero .eyebrow,
+.adv-hero .adv-eyebrow { margin: 0 0 var(--space-6); }
+.adv-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12.5px; letter-spacing: 0.04em;
+  color: var(--accent);
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line-strong);
+  background: rgba(0, 255, 136, 0.04);
+}
+
+.adv-hero-headline,
+.adv-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6.4vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+  margin: 0 0 var(--space-6);
+  text-wrap: balance;
+}
+.adv-hero-headline { max-width: 22ch; }
+.adv-hero .adv-lede { max-width: 62ch; }
+
+.adv-page-head { padding-block: var(--space-12) 0; }
+.adv-page-head h1 {
+  font-size: clamp(2rem, 4.6vw, 3.1rem);
+  letter-spacing: -0.04em;
+  margin: 0 0 var(--space-4);
+}
+.adv-page-head .adv-lede { max-width: 62ch; }
+
+/* ---------- Live counters (8 Jobs · 2 Providers · 8 Capabilities) ---------- */
+.adv-counters {
+  display: flex; align-items: stretch; flex-wrap: wrap;
+  gap: 0;
+  margin: var(--space-8) 0 var(--space-8);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--bg-elev);
+  overflow: hidden;
+  width: fit-content;
+  max-width: 100%;
+}
+.adv-counter {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: var(--space-5) var(--space-8);
+  min-width: 148px;
+  border-right: 1px solid var(--line);
+}
+.adv-counter:last-child { border-right: 0; }
+.adv-counter-num {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--fg);
+  font-variant-numeric: tabular-nums;
+}
+.adv-counter-num[data-loading="true"] { color: var(--fg-faint); }
+.adv-counter-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-dim);
+}
+.adv-counters-sr { position: absolute; left: -9999px; }
+
+@media (max-width: 560px) {
+  .adv-counters { width: 100%; }
+  .adv-counter { flex: 1 1 0; min-width: 0; padding: var(--space-4) var(--space-4); text-align: center; align-items: center; }
+  .adv-counter-num { font-size: var(--text-xl); }
+  .adv-counter-label { font-size: 10px; letter-spacing: 0.06em; }
+}
+
+/* ---------- CTA row ---------- */
+.adv-cta-row {
+  display: flex; flex-wrap: wrap; gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+.adv-cta-row .btn { border-radius: var(--radius-pill); }
+@media (max-width: 560px) {
+  .adv-cta-row { flex-direction: column; align-items: stretch; }
+  .adv-cta-row .btn { justify-content: center; width: 100%; }
+}
+
+/* ---------- Card grid ---------- */
+.adv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+.adv-grid-2 { grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); }
+/* Fixed 4-up track for job rows so 4 and 8 items land on clean rows */
+.adv-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1020px) { .adv-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px)  { .adv-grid-4 { grid-template-columns: 1fr; } }
+/* Fixed 5-up track for the builder pipeline (Construct/Simulate/Route/Submit/Inclusion) */
+.adv-grid-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+@media (max-width: 1180px) { .adv-grid-5 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 720px)  { .adv-grid-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px)  { .adv-grid-5 { grid-template-columns: 1fr; } }
+@media (max-width: 420px) {
+  .adv-grid, .adv-grid-2 { grid-template-columns: 1fr; }
+}
+
+/* ---------- Shared marketplace card chassis ---------- */
+.adv-job-card,
+.adv-provider-card,
+.adv-capability-card {
+  display: flex; flex-direction: column;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+.adv-job-card:hover,
+.adv-provider-card:hover,
+.adv-capability-card:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+  text-decoration: none;
+}
+.adv-job-card { min-height: 232px; }
+.adv-provider-card { min-height: 216px; }
+.adv-capability-card { min-height: 340px; }
+
+.adv-card-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  min-height: 22px;
+}
+.adv-card-title {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  line-height: 1.3;
+  color: var(--fg);
+  margin: 0 0 6px;
+  min-height: 2.6em;            /* reserve two lines so every card aligns */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.adv-card-id {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-dim);
+  letter-spacing: 0.01em;
+  margin: 0 0 var(--space-3);
+  /* always exactly one line so every card in a row has the same height */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 1.0.1 makes every footer-column link a block; keep prose links inline. */
+.adv-footer-col p a { display: inline; padding: 0; color: var(--fg-soft); }
+.adv-footer-col p a:hover { color: var(--accent); }
+.adv-card-desc {
+  color: var(--fg-soft);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  margin: 0 0 var(--space-4);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.adv-card-desc-3 { -webkit-line-clamp: 3; }
+.adv-card-foot {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--fg-dim);
+}
+.adv-card-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.adv-card-link .arr { transition: transform .2s ease; }
+.adv-job-card:hover .adv-card-link .arr,
+.adv-provider-card:hover .adv-card-link .arr,
+.adv-capability-card:hover .adv-card-link .arr { transform: translateX(3px); }
+/* On the fixed 4-up track the cards are narrow: stack the footer so the
+   capability count and the link never wrap into each other. */
+@media (min-width: 1021px) {
+  .adv-grid-4 .adv-card-foot { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+.adv-fulfills {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--fg-soft);
+  letter-spacing: 0.02em;
+}
+.adv-fulfills strong { color: var(--accent); font-weight: 500; }
+
+/* Domain accent hairline on top of each card */
+.adv-job-card[data-domain="builder"]::after,
+.adv-provider-card[data-domain="builder"]::after,
+.adv-capability-card[data-domain="builder"]::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--domain-builder), transparent);
+}
+.adv-job-card[data-domain="mev"]::after,
+.adv-provider-card[data-domain="mev"]::after,
+.adv-capability-card[data-domain="mev"]::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--domain-mev), transparent);
+}
+.adv-job-card[data-domain="agentic"]::after,
+.adv-capability-card[data-domain="agentic"]::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--domain-agentic), transparent);
+}
+
+/* ---------- Capability card machine meta ---------- */
+.adv-cap-meta {
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 6px var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  margin: 0 0 var(--space-4);
+}
+.adv-cap-meta dt {
+  color: var(--fg-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10.5px;
+  padding-top: 1px;
+}
+.adv-cap-meta dd {
+  margin: 0;
+  color: var(--fg);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.adv-cap-meta dd.endpoint { color: var(--fg-soft); direction: ltr; }
+
+/* ---------- Badge row ---------- */
+.adv-badge-row {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+}
+
+/* ---------- Contract badges (ATTEMPT / OUTCOME) ---------- */
+.adv-contract-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.adv-contract-badge-attempt {
+  color: var(--domain-builder);
+  background: var(--status-pilot-bg);
+  border: 1px solid var(--status-pilot-br);
+}
+.adv-contract-badge-outcome {
+  color: var(--domain-mev);
+  background: var(--status-live-bg);
+  border: 1px solid var(--status-live-br);
+}
+
+/* ---------- Price tag ---------- */
+.adv-price-tag {
+  display: inline-flex; align-items: baseline; gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid rgba(0, 255, 136, 0.24);
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  line-height: 1.35;
+}
+.adv-price-tag .unit {
+  font-size: 10px;
+  color: var(--accent-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.adv-price-tag[data-free="true"] {
+  color: var(--fg-soft);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--line-strong);
+}
+.adv-price-tag[data-unpriced="true"] {
+  color: var(--fg-dim);
+  background: rgba(255, 255, 255, 0.02);
+  border-color: var(--line);
+}
+
+/* ---------- Disabled purchase affordance (Phase 7) ---------- */
+.adv-purchase-block {
+  display: flex; flex-direction: column; gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  background: var(--bg-elev-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.adv-purchase-row {
+  display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-4);
+  justify-content: space-between;
+}
+.adv-purchase-disabled {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 14.5px;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--fg-dim);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed var(--line-strong);
+  cursor: not-allowed;
+  opacity: 0.72;
+  filter: saturate(0);
+  pointer-events: none;
+}
+.adv-purchase-disabled::before {
+  content: "";
+  width: 11px; height: 11px;
+  border: 1.5px solid currentColor;
+  border-radius: 3px 3px 0 0;
+  border-bottom: 0;
+  margin-bottom: -2px;
+  flex: 0 0 auto;
+}
+.adv-purchase-note {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--fg-dim);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 58ch;
+}
+.adv-purchase-note strong { color: var(--fg-soft); font-weight: 500; }
+@media (max-width: 560px) {
+  .adv-purchase-row { flex-direction: column; align-items: stretch; }
+  .adv-purchase-disabled { justify-content: center; }
+}
+
+/* ---------- Wire details key/value grid ---------- */
+.adv-wire-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-5) var(--space-8);
+  margin: var(--space-6) 0 0;
+  padding: var(--space-6) 0 0;
+  border-top: 1px solid var(--line);
+}
+.adv-wire-details > div { min-width: 0; }
+.adv-wire-details > div.wide { grid-column: 1 / -1; }
+.adv-wire-details dt,
+.adv-wire-details .k {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--fg-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 6px;
+}
+.adv-wire-details dd,
+.adv-wire-details .v {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--fg);
+  margin: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+.adv-wire-details .v a { color: var(--accent); }
+
+/* ---------- Detail panel ---------- */
+.adv-detail {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+}
+.adv-detail h1 {
+  font-size: clamp(1.75rem, 3.6vw, 2.35rem);
+  letter-spacing: -0.035em;
+  margin: 0 0 var(--space-3);
+}
+.adv-detail .adv-detail-id {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--fg-dim);
+  margin: 0 0 var(--space-4);
+  overflow-wrap: anywhere;
+}
+.adv-detail .adv-detail-lede {
+  color: var(--fg-soft);
+  font-size: var(--text-md);
+  line-height: 1.62;
+  margin: 0;
+  max-width: 72ch;
+}
+.adv-detail .adv-badge-row { margin: 0 0 var(--space-5); }
+.adv-detail-links {
+  display: flex; flex-wrap: wrap; gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+@media (max-width: 560px) {
+  .adv-detail { padding: var(--space-6) var(--space-5); }
+  .adv-detail-links .btn { width: 100%; justify-content: center; }
+}
+
+/* ---------- Loading / error / empty states ---------- */
+.adv-loading, .adv-error, .adv-empty {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--fg-dim);
+  margin: 0;
+}
+.adv-error { color: var(--status-stale); }
+.adv-skeleton-card {
+  min-height: 232px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: linear-gradient(100deg, var(--bg-elev) 30%, var(--bg-elev-2) 50%, var(--bg-elev) 70%);
+  background-size: 300% 100%;
+  animation: adv-shimmer 1.5s linear infinite;
+}
+@keyframes adv-shimmer { 0% { background-position: 150% 0; } 100% { background-position: -150% 0; } }
+
+/* ---------- Machine discovery list ---------- */
+.adv-discovery-note {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--fg-dim);
+  margin: 0 0 var(--space-5);
+  letter-spacing: 0.02em;
+}
+.adv-discovery-list {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 10px;
+}
+.adv-discovery-list li {
+  display: flex; flex-direction: column; gap: 5px;
+  min-height: 74px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elev);
+  font-size: var(--text-sm);
+  color: var(--fg-soft);
+  overflow-wrap: anywhere;
+}
+.adv-discovery-list li code { font-size: 12.5px; }
+.adv-discovery-list li .d { color: var(--fg-dim); font-size: 12.5px; line-height: 1.45; }
+.adv-discovery-list code { color: var(--fg); }
+.adv-discovery-list a { color: var(--accent); }
+
+/* ---------- Footer fine print (legacy alias of .adv-footer-bottom) ---------- */
+.adv-footer-fine {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: var(--space-3);
+  margin-top: var(--space-8);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-dim);
+}
+
+/* ---------- Section rhythm at the bottom of every page ---------- */
+main > .adv-section:last-of-type { padding-block-end: var(--space-4); }
+
+/* ---------- Mobile header (additive; 1.0.1 keeps one fixed-height row) ----------
+   The brand + switcher + primary nav do not fit on one 375px row, which made the
+   document 561px wide and let the page scroll sideways. Wrap the switcher onto its
+   own row instead of shrinking anything. */
+@media (max-width: 760px) {
+  body[data-domain] .adv-nav-inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding-block: 10px;
+    gap: 8px 14px;
+  }
+  body[data-domain] .adv-nav-inner .adv-switcher {
+    order: 3;
+    flex: 1 0 100%;
+    justify-content: flex-start;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  body[data-domain] .adv-nav-links { gap: 18px; margin-left: auto; }
+}
+
+@media (max-width: 560px) {
+  .adv-card-foot { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .adv-card-title { min-height: 0; }
+}
+
+@media (max-width: 560px) {
+  /* Keep maturity + contract badges together on one line and let the price
+     tag follow them instead of pinning it to the far right. */
+  .adv-card-top { flex-wrap: wrap; justify-content: flex-start; }
+  .adv-card-top .adv-badge-row { flex: 0 1 auto; }
+}
+
+/* ===== AgentNet outcome-card (adv-outcome-*) presentation ===== */
+.adv-cap-card.adv-outcome-card { display: flex; flex-direction: column; }
+.adv-outcome-badge { margin-bottom: var(--space-3); }
+.adv-outcome-title { font-family: var(--font-display); font-size: var(--text-md); font-weight: 600; letter-spacing: -0.015em; margin: 0; line-height: 1.3; }
+.adv-outcome-meta {
+  display: grid; grid-template-columns: auto 1fr auto; gap: var(--space-2) var(--space-3);
+  align-items: baseline; padding: 0 0 var(--space-4); margin: 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono); font-size: 11.5px;
+}
+.adv-outcome-meta .adv-outcome-provider { color: var(--fg-dim); }
+.adv-outcome-meta .adv-outcome-price { color: var(--accent); font-weight: 500; justify-self: end; }
+.adv-outcome-meta .adv-outcome-price[data-unpriced="true"] { color: var(--fg-dim); }
+.adv-outcome-meta .adv-outcome-avail { color: var(--fg-soft); justify-self: end; }
+.adv-outcome-card .adv-card-desc {
+  color: var(--fg-soft); font-size: var(--text-sm); line-height: 1.55;
+  margin: 0 0 var(--space-4); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.adv-outcome-card .adv-card-foot { margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--line); }
+.adv-outcome-card .adv-card-id { font-family: var(--font-mono); font-size: 11.5px; color: var(--fg-dim); letter-spacing: 0.02em; }
+@media (max-width: 640px) {
+  .adv-outcome-meta { grid-template-columns: 1fr; gap: 4px; }
+  .adv-outcome-meta .adv-outcome-price, .adv-outcome-meta .adv-outcome-avail { justify-self: start; }
+}

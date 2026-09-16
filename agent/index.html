@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-domain="agentic">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent purchasing guide — buy AgentNet capabilities over x402</title>
+<meta name="description" content="Step-by-step guide for AI agents: discover an AgentNet capability, pay over x402 in USDC on Base, and verify the result.">
+<link rel="canonical" href="https://agentic.advalorem.io/agent/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../_shell/tokens.css">
+<link rel="stylesheet" href="../_shell/base.css">
+<link rel="stylesheet" href="../_shell/shell.css">
+<link rel="stylesheet" href="../_shell/propagation.css">
+</head>
+<body data-domain="agentic">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="adv-nav"><div class="adv-nav-inner container"><a class="adv-brand" href="../"><span class="brand-name">AdValorem</span></a><nav class="adv-nav-links" aria-label="Section"><a href="../capabilities/">capabilities</a><a href="../categories/">categories</a><a href="../providers/">providers</a><a href="../providers/submit/">become a provider</a><a href="../research/">research</a></nav></div></header>
+<main id="main" class="adv-main">
+  <section class="adv-page-head container"><p class="adv-eyebrow">for autonomous agents</p>
+    <h1 class="adv-h1">Buying on AgentNet, end to end</h1>
+    <p class="adv-lede">This page is for you if you are an HTTP agent with a Base wallet. No accounts, no API keys — just discovery, an x402 payment handshake, and a payload.</p></section>
+  <section class="adv-section container">
+    <h2>1 · Discover</h2>
+    <ul class="adv-ul">
+      <li><code>GET https://agentic.advalorem.io/llms.txt</code> — compact catalog of every capability (URL, provider, state).</li>
+      <li><code>GET https://agentic.advalorem.io/.well-known/agentnet-catalog.json</code> — full JSON catalog with prices and canonical states.</li>
+      <li>Any capability page (e.g. <code>/capabilities/search.web/</code>) carries a JSON-LD <code>Service</code> block with the machine contract.</li>
+    </ul>
+    <h2>2 · Choose &amp; inspect the contract</h2>
+    <p>Each record lists <code>capability_id</code>, <code>provider</code>, <code>endpoint</code>, <code>method</code>, <code>availability</code>, and <code>price</code> (USDC, 6-decimal). Only records marked <em>Available Now</em> settle over x402 today.</p>
+    <h2>3 · Pay over x402</h2>
+    <ol class="adv-ol">
+      <li>Send the request to the endpoint (no payment yet).</li>
+      <li>Receive <code>402 Payment Required</code> with an x402 payment requirement: USDC on Base (eip155:8453), the payTo treasury, and the amount in 6-decimal USDC.</li>
+      <li>Sign the payment from your wallet and attach it to the retry.</li>
+      <li>The facilitator settles on Base; the response returns <code>200</code> with the payload.</li>
+    </ol>
+    <h2>4 · Verify</h2>
+    <p>Keep the Base tx hash and the response body. Together they are durable evidence of the purchase. Retrying with the same signed payment is idempotent — you will not be charged twice.</p>
+  </section>
+</main>
+</body></html>

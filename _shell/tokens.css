@@ -1,0 +1,104 @@
+/* ============================================================
+   AdValorem Shared Shell — Design Tokens v1
+   Canonical source. Never override in per-site sheets — extend.
+   ------------------------------------------------------------
+   Reconciles existing production sites:
+   - agentic.advalorem.io (Inter Tight + #00ff88)
+   - mev.advalorem.io (Satoshi + #34d399, panel-based UI)
+   Chosen anchor: agentic.* palette (older, more mature),
+   with mev.*'s panel/pill component patterns.
+   ============================================================ */
+
+:root {
+  /* ---------- Surface ---------- */
+  --bg:            #0a0a0b;
+  --bg-elev:       #111114;
+  --bg-elev-2:     #16161a;
+  --bg-panel:      #14161c;  /* mev.* panel */
+  --line:          rgba(255, 255, 255, 0.08);
+  --line-strong:   rgba(255, 255, 255, 0.14);
+
+  /* ---------- Ink ---------- */
+  --fg:            #f4f4f5;
+  --fg-soft:       #a1a1aa;
+  --fg-dim:        #6b6b74;
+  --fg-faint:      #4a4a52;
+
+  /* ---------- Brand ---------- */
+  --accent:        #00ff88;
+  --accent-dim:    #1fae6a;
+  --accent-glow:   rgba(0, 255, 136, 0.14);
+  --accent-ink:    #00150b;   /* text on accent bg */
+
+  /* ---------- Status colors (shared across shell) ---------- */
+  --status-live:      #34d399;   /* LIVE + rollup=ok  */
+  --status-live-bg:   rgba(52, 211, 153, 0.10);
+  --status-live-br:   rgba(52, 211, 153, 0.28);
+  --status-pilot:     #7aa2ff;   /* PILOT */
+  --status-pilot-bg:  rgba(122, 162, 255, 0.08);
+  --status-pilot-br:  rgba(122, 162, 255, 0.28);
+  --status-planned:   #a78bfa;   /* PLANNED */
+  --status-planned-bg:rgba(167, 139, 250, 0.08);
+  --status-planned-br:rgba(167, 139, 250, 0.28);
+  --status-partial:   #fbbf24;   /* PARTIAL / degraded */
+  --status-partial-bg:rgba(251, 191, 36, 0.10);
+  --status-partial-br:rgba(251, 191, 36, 0.28);
+  --status-stale:     #f87171;   /* STALE / outage */
+  --status-stale-bg:  rgba(248, 113, 113, 0.10);
+  --status-stale-br:  rgba(248, 113, 113, 0.28);
+
+  /* ---------- Per-domain accent ---------- */
+  /* Every capability card / hero can theme itself by domain */
+  --domain-agentic: #00ff88;   /* discover + connect */
+  --domain-builder: #7aa2ff;   /* execute + private flow */
+  --domain-mev:     #34d399;   /* intelligence + data */
+
+  /* ---------- Type ---------- */
+  --font-display: 'Inter Tight', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --text-xs:   11.5px;
+  --text-sm:   13px;
+  --text-base: 15px;
+  --text-md:   17px;
+  --text-lg:   20px;
+  --text-xl:   26px;
+  --text-2xl:  34px;
+  --text-3xl:  44px;
+  --text-hero: clamp(2.6rem, 6.2vw, 4.4rem);
+
+  /* ---------- Space ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ---------- Radius ---------- */
+  --radius-xs: 6px;
+  --radius-sm: 9px;
+  --radius:    12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* ---------- Elevation ---------- */
+  --shadow-1: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-2: 0 4px 12px rgba(0,0,0,0.32);
+  --shadow-3: 0 12px 40px rgba(0,0,0,0.48);
+  --shadow-accent: 0 0 0 1px var(--accent), 0 6px 30px -8px var(--accent-glow);
+
+  /* ---------- Layout ---------- */
+  --maxw:      1120px;
+  --maxw-wide: 1380px;    /* mev.* dashboard uses this */
+  --nav-h:     64px;
+}
+
+/* Optional light mode kept explicit-off. Shell is dark-first,
+   matching production sites. If ever needed, override tokens
+   inside [data-theme="light"] — do not touch defaults. */
