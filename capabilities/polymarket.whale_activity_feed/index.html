@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" data-domain="agentic">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Polymarket · Whale Activity Feed — AgentNet capability</title>
+<meta name="description" content="polymarket.whale_activity_feed — prediction_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementatio">
+<meta property="og:site_name" content="AdValorem — AgentNet">
+<meta property="og:title" content="Polymarket · Whale Activity Feed — AgentNet capability">
+<meta property="og:description" content="polymarket.whale_activity_feed — prediction_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementatio">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://agentic.advalorem.io/capabilities/polymarket.whale_activity_feed/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../_shell/tokens.css">
+<link rel="stylesheet" href="../../_shell/base.css">
+<link rel="stylesheet" href="../../_shell/shell.css">
+<link rel="stylesheet" href="../../_shell/propagation.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://agentic.advalorem.io/capabilities/polymarket.whale_activity_feed/#org", "name": "AdValorem", "url": "https://agentic.advalorem.io/", "description": "AgentNet: an agent-native catalog of capabilities sold over x402."}, {"@type": "Service", "name": "Polymarket \u00b7 Whale Activity Feed", "description": "polymarket.whale_activity_feed \u2014 prediction_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.", "serviceType": "OUTCOME", "provider": {"@type": "Organization", "name": "AdValorem MEV"}, "url": "https://agentic.advalorem.io/capabilities/polymarket.whale_activity_feed/", "identifier": "polymarket.whale_activity_feed", "areaServed": "Worldwide", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USDC", "availability": "https://schema.org/Available"}, "additionalProperty": [{"@type": "PropertyValue", "name": "availability_label", "value": "Planned"}, {"@type": "PropertyValue", "name": "canonical_state", "value": "NOT_SELLABLE"}, {"@type": "PropertyValue", "name": "endpoint", "value": "no endpoint yet"}, {"@type": "PropertyValue", "name": "method", "value": "POST"}, {"@type": "PropertyValue", "name": "protocol", "value": "http"}, {"@type": "PropertyValue", "name": "payment", "value": "x402 v1 \u00b7 Base eip155:8453 \u00b7 USDC"}]}]}</script>
+</head>
+<body data-domain="agentic">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="adv-nav"><div class="adv-nav-inner container"><a class="adv-brand" href="../../"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="logo"><path d="M7 24 L16 7 L25 24"/><path d="M11 17 H21"/></svg><span class="brand-name">AdValorem</span></a><nav class="adv-nav-links" aria-label="Section"><a href="../../capabilities/" class=" active">capabilities</a><a href="../../categories/">categories</a><a href="../../providers/">providers</a><a href="../../providers/submit/">become a provider</a><a href="../../research/">research</a></nav></div></header>
+<main id="main" class="adv-main">
+
+  <section class="adv-page-head container">
+    <p class="adv-eyebrow">capability · AdValorem MEV</p>
+    <h1 class="adv-h1">Polymarket · Whale Activity Feed</h1>
+    <p class="adv-lede">polymarket.whale_activity_feed — prediction_data capability provided by advalorem.mev. Catalog status: DATA_LIVE_CAPABILITY_PLANNED. Contract: OUTCOME. Transport class: REQUEST_RESPONSE. Implementation gap: commercial routing + billing wire not yet integrated.</p>
+    <p><span class="adv-badge adv-badge-pilot">Preview</span>
+    <span class="dim"> · NOT_SELLABLE</span></p>
+  </section>
+  <section class="adv-section container">
+    <h2>Machine contract</h2>
+    <dl class="adv-dl">
+      <dt>capability_id</dt><dd><code>polymarket.whale_activity_feed</code></dd>
+      <dt>provider</dt><dd>AdValorem MEV</dd>
+      <dt>endpoint</dt><dd><code>no endpoint yet</code></dd>
+      <dt>method</dt><dd>POST</dd>
+      <dt>protocol</dt><dd>http / x402</dd>
+      <dt>auth</dt><dd>x402 payment handshake (USDC on Base)</dd>
+      <dt>price</dt><dd>price on wire USDC per call</dd>
+      <dt>contract type</dt><dd>OUTCOME</dd>
+    </dl>
+    <h2>How an agent buys this</h2>
+    <ol class="adv-ol">
+      <li>GET <code>https://agentic.advalorem.io/capabilities/polymarket.whale_activity_feed/</code> (this page) or the catalog at <code>https://agentic.advalorem.io/.well-known/agentnet-catalog.json</code>.</li>
+      <li>Send the request to the endpoint. You receive an HTTP <code>402 Payment Required</code> with an x402 payment requirement (USDC on Base, payTo treasury).</li>
+      <li>Sign the payment, attach it, and resend. The facilitator settles on Base and the response returns 200 with the payload.</li>
+      <li>Keep the tx hash + response as durable evidence of the purchase.</li>
+    </ol>
+    <p><a href="../../providers/submit/">→ Sell something like this: become a provider</a></p>
+  </section>
+
+</main>
+<footer class="adv-footer"><div class="container">
+<p><strong>AgentNet / AdValorem</strong> — a single agentic commerce catalog. Every record below declares its provider, availability, and machine contract. Payments settle over x402 in USDC on Base.</p>
+<p class="dim">Machine surfaces: <a href="../../llms.txt">llms.txt</a> · <a href="../../llms-full.txt">llms-full.txt</a> · <a href="../../.well-known/agentnet-catalog.json">agentnet-catalog.json</a> · <a href="../../agent/">agent guide</a> · <a href="https://agentic.advalorem.io/api/v1/capabilities">API</a> · <a href="../../robots.txt">robots.txt</a> · <a href="../../sitemap.xml">sitemap</a></p>
+<p class="dim">Regenerated September 16, 2026. Canonical source: agentnet_marketplace.public.capabilities.</p>
+</div></footer>
+</body></html>
