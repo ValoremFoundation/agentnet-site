@@ -57,7 +57,7 @@ def footer(rel_depth):
     api_url = f"{BASE}/api/v1/capabilities"
     return f'''<footer class="adv-footer"><div class="container">
 <p><strong>AgentNet / AdValorem</strong> — a single agentic commerce catalog. Every record below declares its provider, availability, and machine contract. Payments settle over x402 in USDC on Base.</p>
-<p class="dim">Machine surfaces: <a href="{base}llms.txt">llms.txt</a> · <a href="{base}llms-full.txt">llms-full.txt</a> · <a href="{base}.well-known/agentnet-catalog.json">agentnet-catalog.json</a> · <a href="{base}agent/">agent guide</a> · <a href="{api_url}">API</a> · <a href="{base}robots.txt">robots.txt</a> · <a href="{base}sitemap.xml">sitemap</a></p>
+<p class="dim">Machine surfaces: <a href="{base}llms.txt">llms.txt</a> · <a href="{base}llms-full.txt">llms-full.txt</a> · <a href="{base}agentnet-catalog.json">agentnet-catalog.json</a> · <a href="{base}agent/">agent guide</a> · <a href="{api_url}">API</a> · <a href="{base}robots.txt">robots.txt</a> · <a href="{base}sitemap.xml">sitemap</a></p>
 <p class="dim">Regenerated {GEN_HUMAN}. Canonical source: agentnet_marketplace.public.capabilities.</p>
 </div></footer>'''
 
@@ -147,7 +147,7 @@ def build_index():
     <div class="adv-grid adv-grid-4">
       <a class="adv-cap-card" href="./llms.txt"><h3 class="adv-card-title">llms.txt</h3><p class="adv-card-desc">Compact catalog of every capability with URL, provider and state. Built for LLMs and agents.</p></a>
       <a class="adv-cap-card" href="./agent/"><h3 class="adv-card-title">Agent purchasing guide</h3><p class="adv-card-desc">Step-by-step: discover a capability, pay over x402, verify the result. For GPTBot, Claude, Perplexity, and any HTTP agent.</p></a>
-      <a class="adv-cap-card" href="./.well-known/agentnet-catalog.json"><h3 class="adv-card-title">agentnet-catalog.json</h3><p class="adv-card-desc">The full canonical catalog as JSON: {n} records, payment details, and canonical states.</p></a>
+      <a class="adv-cap-card" href="./agentnet-catalog.json"><h3 class="adv-card-title">agentnet-catalog.json</h3><p class="adv-card-desc">The full canonical catalog as JSON: {n} records, payment details, and canonical states.</p></a>
       <a class="adv-cap-card" href="./providers/submit/"><h3 class="adv-card-title">List your services</h3><p class="adv-card-desc">One form + one wallet. Become a provider, get indexed to AEO/SEO and LLMs, and start selling to agents.</p></a>
     </div>
   </section>
@@ -242,7 +242,7 @@ def build_capability_detail(cid, title, provider, avail, price):
     </dl>
     <h2>How an agent buys this</h2>
     <ol class="adv-ol">
-      <li>GET <code>{esc(url)}</code> (this page) or the catalog at <code>{BASE}/.well-known/agentnet-catalog.json</code>.</li>
+      <li>GET <code>{esc(url)}</code> (this page) or the catalog at <code>{BASE}/agentnet-catalog.json</code>.</li>
       <li>Send the request to the endpoint. You receive an HTTP <code>402 Payment Required</code> with an x402 payment requirement (USDC on Base, payTo treasury).</li>
       <li>Sign the payment, attach it, and resend. The facilitator settles on Base and the response returns 200 with the payload.</li>
       <li>Keep the tx hash + response as durable evidence of the purchase.</li>
@@ -349,7 +349,7 @@ def build_provider_detail(p):
 </a>''' for cid, title, provider, avail, price in caps_for_p
     ) + '''
   </div></section>
-  <section class="adv-section container"><p><a href="../submit/">→ List your own services on AgentNet</a></p></section>
+  <section class="adv-section container"><p><a href="../providers/submit/">→ List your own services on AgentNet</a></p></section>
 '''
     write(f"providers/{p}/index.html", page(f"{name} — provider on AgentNet", f"Provider store for {p}. {len(caps_for_p)} capabilities over x402.", 2, body, active="providers", url=f"{BASE}/providers/{p}/"))
 
@@ -434,7 +434,7 @@ SUBMIT_PAGE = '''<!doctype html>
 </main>
 <footer class="adv-footer"><div class="container">
 <p><strong>AgentNet / AdValorem</strong> — a single agentic commerce catalog. Payments settle over x402 in USDC on Base.</p>
-<p class="dim">Machine surfaces: <a href="../../llms.txt">llms.txt</a> · <a href="../../llms-full.txt">llms-full.txt</a> · <a href="../../.well-known/agentnet-catalog.json">agentnet-catalog.json</a> · <a href="../../agent/">agent guide</a> · <a href="../../robots.txt">robots.txt</a> · <a href="../../sitemap.xml">sitemap</a></p>
+<p class="dim">Machine surfaces: <a href="../../llms.txt">llms.txt</a> · <a href="../../llms-full.txt">llms-full.txt</a> · <a href="../../agentnet-catalog.json">agentnet-catalog.json</a> · <a href="../../agent/">agent guide</a> · <a href="../../robots.txt">robots.txt</a> · <a href="../../sitemap.xml">sitemap</a></p>
 </div></footer>
 </body></html>
 '''
@@ -533,7 +533,7 @@ AGENT_GUIDE = '''<!doctype html>
     <h2>1 · Discover</h2>
     <ul class="adv-ul">
       <li><code>GET https://agentic.advalorem.io/llms.txt</code> — compact catalog of every capability (URL, provider, state).</li>
-      <li><code>GET https://agentic.advalorem.io/.well-known/agentnet-catalog.json</code> — full JSON catalog with prices and canonical states.</li>
+      <li><code>GET https://agentic.advalorem.io/agentnet-catalog.json</code> — full JSON catalog with prices and canonical states.</li>
       <li>Any capability page (e.g. <code>/capabilities/search.web/</code>) carries a JSON-LD <code>Service</code> block with the machine contract.</li>
     </ul>
     <h2>2 · Choose &amp; inspect the contract</h2>
@@ -566,7 +566,7 @@ def build_llms_txt():
         lines.append(f"- [{title}]({BASE}/capabilities/{cid}/): {cid} · {provider} · {avail}" + (f" · {pr} USDC" if pr else ""))
     lines.append("")
     lines.append("## Machine surfaces")
-    lines.append(f"- Full catalog JSON: {BASE}/.well-known/agentnet-catalog.json")
+    lines.append(f"- Full catalog JSON: {BASE}/agentnet-catalog.json")
     lines.append(f"- Agent purchasing guide: {BASE}/agent/")
     lines.append(f"- Provider onboarding: {BASE}/providers/submit/")
     lines.append(f"- API: {BASE}/api/v1/capabilities")
@@ -605,7 +605,7 @@ Sitemap: {BASE}/sitemap.xml
 # Machine entry points
 Allow: /llms.txt
 Allow: /llms-full.txt
-Allow: /.well-known/agentnet-catalog.json
+Allow: /agentnet-catalog.json
 Allow: /agent/
 Allow: /api/
 '''
@@ -622,7 +622,7 @@ def build_sitemap():
         (f"{BASE}/agent/", 0.8, "monthly"),
         (f"{BASE}/llms.txt", 0.6, "weekly"),
         (f"{BASE}/llms-full.txt", 0.5, "weekly"),
-        (f"{BASE}/.well-known/agentnet-catalog.json", 0.5, "weekly"),
+        (f"{BASE}/agentnet-catalog.json", 0.5, "weekly"),
     ]
     for c in CATEGORIES:
         urls.append((f"{BASE}/categories/{c}/", 0.7, "weekly"))

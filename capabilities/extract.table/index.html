@@ -44,7 +44,7 @@
     </dl>
     <h2>How an agent buys this</h2>
     <ol class="adv-ol">
-      <li>GET <code>https://agentic.advalorem.io/capabilities/extract.table/</code> (this page) or the catalog at <code>https://agentic.advalorem.io/.well-known/agentnet-catalog.json</code>.</li>
+      <li>GET <code>https://agentic.advalorem.io/capabilities/extract.table/</code> (this page) or the catalog at <code>https://agentic.advalorem.io/agentnet-catalog.json</code>.</li>
       <li>Send the request to the endpoint. You receive an HTTP <code>402 Payment Required</code> with an x402 payment requirement (USDC on Base, payTo treasury).</li>
       <li>Sign the payment, attach it, and resend. The facilitator settles on Base and the response returns 200 with the payload.</li>
       <li>Keep the tx hash + response as durable evidence of the purchase.</li>
@@ -55,7 +55,7 @@
 </main>
 <footer class="adv-footer"><div class="container">
 <p><strong>AgentNet / AdValorem</strong> — a single agentic commerce catalog. Every record below declares its provider, availability, and machine contract. Payments settle over x402 in USDC on Base.</p>
-<p class="dim">Machine surfaces: <a href="../../llms.txt">llms.txt</a> · <a href="../../llms-full.txt">llms-full.txt</a> · <a href="../../.well-known/agentnet-catalog.json">agentnet-catalog.json</a> · <a href="../../agent/">agent guide</a> · <a href="https://agentic.advalorem.io/api/v1/capabilities">API</a> · <a href="../../robots.txt">robots.txt</a> · <a href="../../sitemap.xml">sitemap</a></p>
+<p class="dim">Machine surfaces: <a href="../../llms.txt">llms.txt</a> · <a href="../../llms-full.txt">llms-full.txt</a> · <a href="../../agentnet-catalog.json">agentnet-catalog.json</a> · <a href="../../agent/">agent guide</a> · <a href="https://agentic.advalorem.io/api/v1/capabilities">API</a> · <a href="../../robots.txt">robots.txt</a> · <a href="../../sitemap.xml">sitemap</a></p>
 <p class="dim">Regenerated September 16, 2026. Canonical source: agentnet_marketplace.public.capabilities.</p>
 </div></footer>
 </body></html>

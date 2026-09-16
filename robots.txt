@@ -12,6 +12,6 @@ Sitemap: https://agentic.advalorem.io/sitemap.xml
 # Machine entry points
 Allow: /llms.txt
 Allow: /llms-full.txt
-Allow: /.well-known/agentnet-catalog.json
+Allow: /agentnet-catalog.json
 Allow: /agent/
 Allow: /api/

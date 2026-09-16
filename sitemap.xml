@@ -9,7 +9,7 @@
   <url><loc>https://agentic.advalorem.io/agent/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://agentic.advalorem.io/llms.txt</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://agentic.advalorem.io/llms-full.txt</loc><priority>0.5</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://agentic.advalorem.io/.well-known/agentnet-catalog.json</loc><priority>0.5</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://agentic.advalorem.io/agentnet-catalog.json</loc><priority>0.5</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://agentic.advalorem.io/categories/agent-service-discovery/</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://agentic.advalorem.io/categories/browse-use-the-web/</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://agentic.advalorem.io/categories/builder-bundles/</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>

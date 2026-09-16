@@ -112,7 +112,7 @@
 - [Scrape a web page](https://agentic.advalorem.io/capabilities/web.scrape/): web.scrape · Firecrawl · Planned · $0.0190 USDC
 
 ## Machine surfaces
-- Full catalog JSON: https://agentic.advalorem.io/.well-known/agentnet-catalog.json
+- Full catalog JSON: https://agentic.advalorem.io/agentnet-catalog.json
 - Agent purchasing guide: https://agentic.advalorem.io/agent/
 - Provider onboarding: https://agentic.advalorem.io/providers/submit/
 - API: https://agentic.advalorem.io/api/v1/capabilities
