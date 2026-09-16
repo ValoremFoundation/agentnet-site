@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" data-domain="agentic">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geocode an address string — AgentNet capability</title>
+<meta name="description" content="Geocode a free-form address string against OpenStreetMap via the 2s.io geocode/address endpoint. [PARKED 2026-08-30: upstream blocked — wire/version mismatch; not executable; R1 frozen.]">
+<meta property="og:site_name" content="AdValorem — AgentNet">
+<meta property="og:title" content="Geocode an address string — AgentNet capability">
+<meta property="og:description" content="Geocode a free-form address string against OpenStreetMap via the 2s.io geocode/address endpoint. [PARKED 2026-08-30: upstream blocked — wire/version mismatch; not executable; R1 frozen.]">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://agentic.advalorem.io/capabilities/two_s_io.geocode_address/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../_shell/tokens.css">
+<link rel="stylesheet" href="../../_shell/base.css">
+<link rel="stylesheet" href="../../_shell/shell.css">
+<link rel="stylesheet" href="../../_shell/propagation.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://agentic.advalorem.io/capabilities/two_s_io.geocode_address/#org", "name": "AdValorem", "url": "https://agentic.advalorem.io/", "description": "AgentNet: an agent-native catalog of capabilities sold over x402."}, {"@type": "Service", "name": "Geocode an address string", "description": "Geocode a free-form address string against OpenStreetMap via the 2s.io geocode/address endpoint. [PARKED 2026-08-30: upstream blocked \u2014 wire/version mismatch; not executable; R1 frozen.]", "serviceType": "ATTEMPT", "provider": {"@type": "Organization", "name": "2s.io"}, "url": "https://agentic.advalorem.io/capabilities/two_s_io.geocode_address/", "identifier": "two_s_io.geocode_address", "areaServed": "Worldwide", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USDC", "availability": "https://schema.org/Available"}, "additionalProperty": [{"@type": "PropertyValue", "name": "availability_label", "value": "Blocked (upstream)"}, {"@type": "PropertyValue", "name": "canonical_state", "value": "UPSTREAM_BLOCKED"}, {"@type": "PropertyValue", "name": "endpoint", "value": "https://2s.io/api/geocode/address"}, {"@type": "PropertyValue", "name": "method", "value": "GET"}, {"@type": "PropertyValue", "name": "protocol", "value": "http"}, {"@type": "PropertyValue", "name": "payment", "value": "x402 v1 \u00b7 Base eip155:8453 \u00b7 USDC"}]}]}</script>
+</head>
+<body data-domain="agentic">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="adv-nav"><div class="adv-nav-inner container"><a class="adv-brand" href="../../"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="logo"><path d="M7 24 L16 7 L25 24"/><path d="M11 17 H21"/></svg><span class="brand-name">AdValorem</span></a><nav class="adv-nav-links" aria-label="Section"><a href="../../capabilities/" class=" active">capabilities</a><a href="../../categories/">categories</a><a href="../../providers/">providers</a><a href="../../providers/submit/">become a provider</a><a href="../../research/">research</a></nav></div></header>
+<main id="main" class="adv-main">
+
+  <section class="adv-page-head container">
+    <p class="adv-eyebrow">capability · 2s.io</p>
+    <h1 class="adv-h1">Geocode an address string</h1>
+    <p class="adv-lede">Geocode a free-form address string against OpenStreetMap via the 2s.io geocode/address endpoint. [PARKED 2026-08-30: upstream blocked — wire/version mismatch; not executable; R1 frozen.]</p>
+    <p><span class="adv-badge adv-badge-pilot">Preview</span>
+    <span class="dim"> · UPSTREAM_BLOCKED</span></p>
+  </section>
+  <section class="adv-section container">
+    <h2>Machine contract</h2>
+    <dl class="adv-dl">
+      <dt>capability_id</dt><dd><code>two_s_io.geocode_address</code></dd>
+      <dt>provider</dt><dd>2s.io</dd>
+      <dt>endpoint</dt><dd><code>https://2s.io/api/geocode/address</code></dd>
+      <dt>method</dt><dd>GET</dd>
+      <dt>protocol</dt><dd>http / x402</dd>
+      <dt>auth</dt><dd>x402 payment handshake (USDC on Base)</dd>
+      <dt>price</dt><dd>$0.0025 USDC per call</dd>
+      <dt>contract type</dt><dd>ATTEMPT</dd>
+    </dl>
+    <h2>How an agent buys this</h2>
+    <ol class="adv-ol">
+      <li>GET <code>https://agentic.advalorem.io/capabilities/two_s_io.geocode_address/</code> (this page) or the catalog at <code>https://agentic.advalorem.io/.well-known/agentnet-catalog.json</code>.</li>
+      <li>Send the request to the endpoint. You receive an HTTP <code>402 Payment Required</code> with an x402 payment requirement (USDC on Base, payTo treasury).</li>
+      <li>Sign the payment, attach it, and resend. The facilitator settles on Base and the response returns 200 with the payload.</li>
+      <li>Keep the tx hash + response as durable evidence of the purchase.</li>
+    </ol>
+    <p><a href="../../providers/submit/">→ Sell something like this: become a provider</a></p>
+  </section>
+
+</main>
+<footer class="adv-footer"><div class="container">
+<p><strong>AgentNet / AdValorem</strong> — a single agentic commerce catalog. Every record below declares its provider, availability, and machine contract. Payments settle over x402 in USDC on Base.</p>
+<p class="dim">Machine surfaces: <a href="../../llms.txt">llms.txt</a> · <a href="../../llms-full.txt">llms-full.txt</a> · <a href="../../.well-known/agentnet-catalog.json">agentnet-catalog.json</a> · <a href="../../agent/">agent guide</a> · <a href="https://agentic.advalorem.io/api/v1/capabilities">API</a> · <a href="../../robots.txt">robots.txt</a> · <a href="../../sitemap.xml">sitemap</a></p>
+<p class="dim">Regenerated September 16, 2026. Canonical source: agentnet_marketplace.public.capabilities.</p>
+</div></footer>
+</body></html>
