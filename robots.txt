@@ -1,0 +1,17 @@
+# AgentNet / AdValorem — agent-friendly robots
+# Humans and AI agents are both welcome. Machine surfaces are explicit below.
+
+User-agent: *
+Allow: /
+
+# Explicit machine-readable surfaces (for AI agents / LLMs)
+# llms.txt: compact catalog. llms-full.txt: verbose catalog.
+# agentnet-catalog.json: full JSON catalog. agent/: purchasing guide.
+Sitemap: https://agentic.advalorem.io/sitemap.xml
+
+# Machine entry points
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /.well-known/agentnet-catalog.json
+Allow: /agent/
+Allow: /api/
