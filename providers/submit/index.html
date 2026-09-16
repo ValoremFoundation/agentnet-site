@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-domain="agentic">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Become a provider — list your services on AgentNet</title>
+<meta name="description" content="One form, one wallet. List your data or API services on AgentNet, get indexed for SEO/AEO and LLMs, and sell to AI agents over x402.">
+<meta property="og:site_name" content="AdValorem — AgentNet">
+<meta property="og:title" content="Become a provider on AgentNet">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://agentic.advalorem.io/providers/submit/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../_shell/tokens.css">
+<link rel="stylesheet" href="../../_shell/base.css">
+<link rel="stylesheet" href="../../_shell/shell.css">
+<link rel="stylesheet" href="../../_shell/propagation.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","name":"AdValorem","url":"https://agentic.advalorem.io/"},
+ {"@type":"WebPage","url":"https://agentic.advalorem.io/providers/submit/","name":"Become a provider","description":"Submit your services to be listed on AgentNet and sold over x402."}
+]}
+</script>
+</head>
+<body data-domain="agentic">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="adv-nav"><div class="adv-nav-inner container"><a class="adv-brand" href="../../"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="logo"><path d="M7 24 L16 7 L25 24"/><path d="M11 17 H21"/></svg><span class="brand-name">AdValorem</span></a><nav class="adv-nav-links" aria-label="Section"><a href="../../capabilities/">capabilities</a><a href="../../categories/">categories</a><a href="../../providers/">providers</a><a href="../../providers/submit/" class=" active">become a provider</a><a href="../../research/">research</a></nav></div></header>
+<main id="main" class="adv-main">
+  <section class="adv-page-head container">
+    <p class="adv-eyebrow">provider onboarding</p>
+    <h1 class="adv-h1">Sell your data or API to AI agents</h1>
+    <p class="adv-lede">A <strong>provider</strong> is simply a business willing to sell its services over x402. Fill in a few details and your wallet address below. When you finish, your services are automatically searchable in the AgentNet catalog, indexed for SEO/AEO and LLMs, and your customers — human or agent — can hit your store page and buy from you. You get paid directly on Base in USDC after we take a small commission for the privilege of using x402.</p>
+  </section>
+
+  <section class="adv-section container">
+    <div class="adv-grid adv-grid-2">
+      <div>
+        <h2 class="adv-h1">How it works</h2>
+        <ol class="adv-ol">
+          <li><strong>You submit your service.</strong> A name, what it does, an endpoint (or "coming soon"), a starting x402 price in USDC, and your receiving wallet.</li>
+          <li><strong>We add you to the catalog.</strong> Your provider page and each capability page go live at <code>agentic.advalorem.io/providers/&lt;your-slug&gt;/</code> and are indexed by our robots, sitemap, llms.txt and AEO/SEO surfaces.</li>
+          <li><strong>Agents and humans find you.</strong> AI agents discover your capability through <code>llms.txt</code>, <code>agentnet-catalog.json</code> and the capability pages; humans browse by category.</li>
+          <li><strong>They buy over x402.</strong> The buyer's agent sends an HTTP request, receives a 402 payment requirement, signs a USDC payment on Base, resends — and receives your data. You are paid directly; we deduct a small platform commission.</li>
+        </ol>
+        <p class="dim">No accounts, no API-key handoff. One wallet is the whole setup.</p>
+      </div>
+      <div class="adv-card">
+        <h2 class="adv-h1">Submit your services</h2>
+        <form id="provider-form" action="/providers/submit" method="post" class="adv-form">
+          <label>Your business / provider name <input name="business_name" required placeholder="Acme Data Inc."></label>
+          <label>Provider slug <input name="provider_id" required placeholder="acme-data" pattern="[a-z0-9][a-z0-9-]*" title="lowercase, numbers, dashes"></label>
+          <label>Website or contact email <input name="contact" required placeholder="https://acme.com or ops@acme.com"></label>
+          <div class="adv-fieldset"><legend>Service(s) to list</legend>
+            <label>Capability ID <input name="capability_id" required placeholder="acme.data_snapshot"></label>
+            <label>Human title <input name="title" required placeholder="Live market snapshot"></label>
+            <label>What it does <textarea name="description" required rows="3" placeholder="Returns the current …"></textarea></label>
+            <label>Endpoint (optional for "coming soon") <input name="endpoint" placeholder="https://api.acme.com/v1/snapshot"></label>
+            <label>HTTP method <select name="method"><option>GET</option><option>POST</option></select></label>
+            <label>Starting price (USDC, 6-decimal) <input name="price_usdc" type="number" step="0.000001" min="0" required placeholder="0.001000"></label>
+          </div>
+          <label>Your x402 receiving wallet <input name="wallet" required placeholder="0x… (USDC on Base eip155:8453)" pattern="^0x[a-fA-F0-9]{40}$"></label>
+          <label class="adv-check"><input type="checkbox" name="terms" required> I agree that AgentNet may take a small commission on x402 settlements and that my services will be publicly searchable.</label>
+          <button class="btn btn-primary btn-lg" type="submit">Submit my provider listing</button>
+          <p class="dim">After submitting, an operator verifies the wallet and endpoint (or your "coming soon" status) and publishes your store page. You'll be added to robots.txt, sitemap.xml, llms.txt and agentnet-catalog.json automatically.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section container">
+    <h2 class="adv-h1">What happens after you submit</h2>
+    <div class="adv-grid adv-grid-3">
+      <div class="adv-card"><h3>Store page</h3><p>Your provider page goes live with your capabilities, machine contracts, and prices — the same format every existing provider has.</p></div>
+      <div class="adv-card"><h3>AEO + SEO indexing</h3><p>Your pages are added to the sitemap and to our robots/AEO surfaces so AI assistants and search engines can find and recommend your services.</p></div>
+      <div class="adv-card"><h3>LLM discoverability</h3><p>Your capability appears in <code>llms.txt</code> and <code>agentnet-catalog.json</code>, so agents can discover and purchase your service directly.</p></div>
+    </div>
+  </section>
+</main>
+<footer class="adv-footer"><div class="container">
+<p><strong>AgentNet / AdValorem</strong> — a single agentic commerce catalog. Payments settle over x402 in USDC on Base.</p>
+<p class="dim">Machine surfaces: <a href="../../llms.txt">llms.txt</a> · <a href="../../llms-full.txt">llms-full.txt</a> · <a href="../../.well-known/agentnet-catalog.json">agentnet-catalog.json</a> · <a href="../../agent/">agent guide</a> · <a href="../../robots.txt">robots.txt</a> · <a href="../../sitemap.xml">sitemap</a></p>
+</div></footer>
+</body></html>
